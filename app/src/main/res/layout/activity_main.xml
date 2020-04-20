@@ -20,14 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/guess_comp"
-        android:layout_margin="20dp"
+        android:layout_margin="55dp"
         tools:layout_editor_absoluteY="154dp" />
 
     <ImageButton
         android:id="@+id/guess_comp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="30dp"
         app:srcCompat="@drawable/comp_guess" />
 
 </LinearLayout>
