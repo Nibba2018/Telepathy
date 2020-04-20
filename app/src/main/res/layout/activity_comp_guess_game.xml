@@ -32,24 +32,27 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/go_lower"
             android:layout_width="98dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="playGame"
             app:srcCompat="@drawable/go_lower" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/go_higher"
             android:layout_width="89dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="playGame"
             app:srcCompat="@drawable/go_higher" />
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/correctButton"
         android:layout_width="329dp"
         android:layout_height="68dp"
         android:layout_marginTop="10dp"
+        android:onClick="playGame"
         app:srcCompat="@drawable/correct_button" />
 </LinearLayout>

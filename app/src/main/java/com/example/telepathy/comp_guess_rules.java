@@ -19,9 +19,9 @@ public class comp_guess_rules extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToRules = new Intent();
-                goToRules.setClass(getApplicationContext(), comp_guess_game.class);
-                startActivity(goToRules);
+                Intent goToGame = new Intent();
+                goToGame.setClass(getBaseContext(), comp_guess_game.class);
+                startActivity(goToGame);
             }
         });
     }
