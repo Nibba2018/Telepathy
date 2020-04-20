@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".comp_guess_rules"></activity>
+        <activity android:name=".guess_comp_end"></activity>
+        <activity android:name=".guess_comp_game" />
+        <activity android:name=".guess_comp_rules" />
+        <activity android:name=".comp_guess_end" />
+        <activity android:name=".comp_guess_game" />
+        <activity android:name=".comp_guess_rules" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -14,11 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
-            this.getSupportActionBar().hide();
-        } catch (NullPointerException e) {
-        }
-
         ImageButton comp_guess = (ImageButton) findViewById(R.id.comp_guess);
         ImageButton guess_comp = (ImageButton) findViewById(R.id.guess_comp);
 

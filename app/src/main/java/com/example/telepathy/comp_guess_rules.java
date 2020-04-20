@@ -14,18 +14,13 @@ public class comp_guess_rules extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comp_guess_rules);
 
-        try {
-            this.getSupportActionBar().hide();
-        } catch (NullPointerException e) {
-        }
-
         ImageButton continueButton = (ImageButton) findViewById(R.id.continueButton);
 
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent goToRules = new Intent();
-                goToRules.setClass(getApplicationContext(), .class);
+                goToRules.setClass(getApplicationContext(), comp_guess_game.class);
                 startActivity(goToRules);
             }
         });
