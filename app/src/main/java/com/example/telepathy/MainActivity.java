@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
         guess_comp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent goToRules = new Intent();
+                goToRules.setClass(getApplicationContext(), guess_comp_end.class);
+                startActivity(goToRules);
             }
         });
     }
