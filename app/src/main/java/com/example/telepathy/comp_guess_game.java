@@ -9,28 +9,42 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class comp_guess_game extends AppCompatActivity {
+public class comp_guess_game extends AppCompatActivity implements View.OnClickListener{
+
+    private int upper_bound = 10000;
+    private int lower_bound = 0;
+    private int mid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comp_guess_game);
+
+        this.mid = (this.lower_bound + this.upper_bound)/2;
+        Toast.makeText(getApplicationContext(), "Is your number:" + String.valueOf(this.mid) + "?", Toast.LENGTH_SHORT).show();
+
+        ImageButton goLower = (ImageButton) findViewById(R.id.go_lower);
+        ImageButton goHigher = (ImageButton) findViewById(R.id.go_higher);
+        ImageButton correctButton = (ImageButton) findViewById(R.id.correctButton);
+
+        goLower.setOnClickListener(this);
+        goHigher.setOnClickListener(this);
+        correctButton.setOnClickListener(this);
     }
 
-    public void playGame(View v){
-        ImageButton goLowerButton = (ImageButton) findViewById(R.id.go_lower);
-        ImageButton goHigherButton = (ImageButton) findViewById(R.id.go_higher);
-        ImageButton correctButton = (ImageButton) findViewById(R.id.correctButton);
-        if (v.equals(goLowerButton)){
-            Toast.makeText(getApplicationContext(), "Go Lower!!", Toast.LENGTH_SHORT).show();
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.go_lower: this.upper_bound = this.mid - 1; break;
+            case R.id.go_higher: this.lower_bound = this.mid + 1; break;
+            case R.id.correctButton:{
+                Intent goToEnd = new Intent();
+                goToEnd.setClass(this, comp_guess_end.class);
+                startActivity(goToEnd);
+            }
         }
-        else if (v.equals(goHigherButton)){
-            Toast.makeText(getApplicationContext(), "Go Higher!!", Toast.LENGTH_SHORT).show();
-        }
-        else if (v.equals(correctButton)){
-            Intent goToEnd = new Intent();
-            goToEnd.setClass(getApplicationContext(), comp_guess_end.class);
-            startActivity(goToEnd);
-        }
+
+        Toast.makeText(getApplicationContext(), "Is your number:" + String.valueOf(this.mid) + "?", Toast.LENGTH_SHORT).show();
+        this.mid = (this.upper_bound + this.lower_bound)/2;
     }
 }
