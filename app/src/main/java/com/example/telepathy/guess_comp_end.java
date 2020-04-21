@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class guess_comp_end extends AppCompatActivity implements View.OnClickListener{
@@ -14,6 +15,12 @@ public class guess_comp_end extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guess_comp_end);
+
+        Intent gameRes = getIntent();
+
+        TextView result = (TextView) findViewById(R.id.guess_comp_result);
+        String query = String.valueOf(result.getText()) + gameRes.getStringExtra("Val");
+        result.setText(query);
 
         ImageButton replayButton = (ImageButton) findViewById(R.id.replay);
         ImageButton quitButton = (ImageButton) findViewById(R.id.quitButton);
@@ -41,7 +48,7 @@ public class guess_comp_end extends AppCompatActivity implements View.OnClickLis
             }
             case R.id.replay:{
                 Intent goToGame = new Intent();
-                goToGame.setClass(this, comp_guess_game.class);
+                goToGame.setClass(this, guess_comp_game.class);
                 startActivity(goToGame);
                 break;
             }

@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/comp_guess_result"
+        android:id="@+id/guess_comp_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
