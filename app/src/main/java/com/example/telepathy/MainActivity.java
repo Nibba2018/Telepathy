@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent goToRules = new Intent();
-                goToRules.setClass(getApplicationContext(), guess_comp_end.class);
+                goToRules.setClass(getApplicationContext(), guess_comp_rules.class);
                 startActivity(goToRules);
             }
         });
